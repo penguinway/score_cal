@@ -10,6 +10,7 @@ ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("starter")
 class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.input_tip = None
         self.course = None
         self.grid_layout = None
         self.weights = None
@@ -26,6 +27,9 @@ class MyWindow(QWidget):
         self.setWindowTitle("均分计算")
         self.layout = QVBoxLayout()
 
+        self.input_tip = QLabel("请输入科目数")
+        self.layout.addWidget(self.input_tip)
+        
         self.row_input = QLineEdit()
         self.layout.addWidget(self.row_input)
 
